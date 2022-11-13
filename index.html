@@ -1,79 +1,82 @@
 <!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vending Machine</title>
-        <link rel="stylesheet" href="./src/style/reset.css">
-        <link rel="stylesheet" href="./src/style/style.css">
-        <!-- <link rel="stylesheet" href="./style/style_scss.css" /> -->
-    </head>
-    <body>
-        <header>
-            <h1>
-                <img class="header-img" src="./src/img/Logo_img.png" alt="cola cola">
-            </h1>
-        </header>
-        <section class="container">
-            <h2 class="txt-hide">메인 컨테이너</h2>
-            <article class="machine">
-                <h3 class="txt-hide">자판기</h3>
-                <div class="machine-items">
-                    <h4 class="txt-hide">음료 목록</h4>
-                    <ol class="machine-items-list">
-                        <!-- 음료 목록 JS로 디스플레이 -->
-                    </ol>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/style/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="drink_Select">
+            <ul class="Cola_Select">
+                <li class="Cola_List">
+                    <img class="Cola_List_img" src="#" alt="">
+                    <span class="Cola_label_cont"></span>
+                    <span class="Cola_Price"></span>
+                </li>
+                <li class="Cola_List">
+                    <img class="Cola_List_img" src="#" alt="">
+                    <span class="Cola_label_cont"></span>
+                    <span class="Cola_Price"></span>
+                    
+                </li>
+                <li class="Cola_List">
+                    <img class="Cola_List_img" src="#" alt="">
+                    <span class="Cola_label_cont"></span>
+                    <span class="Cola_Price"></span>
+                </li>
+                <li class="Cola_List">
+                    <img class="Cola_List_img" src="#" alt="">
+                    <span class="Cola_label_cont"></span>
+                    <span class="Cola_Price"></span>
+                </li>
+                <li class="Cola_List">
+                    <img class="Cola_List_img" src="#" alt="">
+                    <span class="Cola_label_cont"></span>
+                    <span class="Cola_Price"></span>
+                </li>
+                <li class="Cola_List">
+                    <img class="Cola_List_img" src="#" alt="">
+                    <span class="Cola_label_cont"></span>
+                    <span class="Cola_Price"></span>
+                </li>
+            </ul>
+            <div class="Calculator">
+                <p class="Current_balance">
+                    <span class="balance">잔액:</span>
+                    <span class="won">1000원</span>
+                </p>
+                <button type="button" class="Change_btn">거스름돈 반환</button>
+                <input type="text" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" class="Deposit" placeholder="입금액 입력">
+                <button type="button" class="Deposit_btn">입금</button>
+                <div class="Coke_Select">
+                    <ul class="Coke_list">
+                    </ul>
                 </div>
-                <div class="machine-func">
-                    <div class="balance">
-                        <h4>잔액:</h4>
-                        <span class="balance_result">0원</span>
-                    </div>
-                    <button class="btn-change">
-                        거스름돈 반환
-                    </button>
-                    <!-- 숫자만 입력될 수 있도록 정규식표현 사용-->
-                    <input
-                        class="input-payment"
-                        type="text"
-                        onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-                        placeholder="입금액 입력"
-                    >
-                    <button
-                        class="btn-payment"
-                        type="button"
-                    >
-                        입금
-                    </button>
-                    <div class="selected">
-                        <h4 class="txt-hide">선택한 음료 리스트</h4>
-                        <ol class="selected-list" id="selectarea">
-                            <!-- 선택 목록 JS로 디스플레이 -->
-                        </ol>
-                    </div>
-                    <button class="btn-get">획득</button>
-                </div>
-            </article>
-            <div class="pocket">
-                <article class="wallet">
-                    <h3 class="txt-hide">소지금, 획득한 음료</h3>
-                    <div class="wallet-box">
-                        <h4>소지금:</h4>
-                        <span class="wallet_coin">0원</span>
-                    </div>
-                </article>
-                <article class="earned">
-                    <h4>획득한 음료</h4>
-                    <ol class="selected-list" id="getarea">
-                        <!-- 획득 목록 JS로 디스플레이 -->
-                    </ol>
-                    <span class="total-price">
-                        총금액: 0원
-                    </span>
-                </article>
+                <button type="button" class="Coke_get_btn">획득</button>
             </div>
-        </section>
-        <script src="./src/js/script.js"></script>
-    </body>
+        </div>
+
+        <div class="funds">
+            <p class="fund">
+                <span class="fundage">소지금:</span>
+                <span class="fund_won">25000원</span>
+            </p>
+        </div>
+        
+        <div class="shopping_list">
+            <span class="drink_get">획득한 음료</span>
+            <div class="drink_list">
+                <ul class="Coke_list_ls">
+                </ul>
+            </div>
+            <span class="extended_price">총금액 : 9,000원</span>
+        </div>
+    </div>
+    <script src="./src/script/script.js"></script>
+</body>
 </html>

@@ -1,332 +1,378 @@
-/* ----- 폰트 ----- */
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
-* {
-    font-family: "Noto Sans KR", sans-serif;
-    font-style: normal;
+@font-face {
+    font-family: Noto Sans;
+    src: url("../font/Noto_Sans_KR/NotoSansKR-Regular.otf");
+}
+li {
+    list-style: none;
+}
+:root {
+    font-family: "Noto Sans";
     font-weight: 500;
 }
 
+html {
+    width: 1920px;
+    height: 1080px;
+}
+
 body {
-    background-color: #eae8fe;
-}
-
-.header-img {
-    display: block;
-    height: 180px;
-    margin: 0 auto;
-    margin-bottom: 67px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-}
-
-.txt-hide {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-}
-
-/* 자판기 */
-.machine {
-    background-color: #ffffff;
-    padding: 31px 27px 28px;
-}
-
-/* 자판기 음료 목록 */
-.machine .machine-items {
-    background-color: pink;
-    margin-bottom: 20px;
-}
-
-.machine-items-list {
-    background-color: aliceblue;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
-    position: relative;
-    font-size: 9px;
-    line-height: 13px;
-}
-
-.machine-items-list li {
-    background-color: #ffffff;
-    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
-    border-radius: 10px;
-    width: 94px;
-    height: 130px;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 11px 11px 9px 13px;
-    cursor: pointer;
-    position: relative;
-}
-
-/* soldout 클래스는 아웃라인 안보이게 적용 */
-.machine-items-list li:hover:not(.soldout) {
-    outline: 3px solid #6327fe;
-}
-
-/* 클릭했을 때 */
-.machine-items-list .item-li:active:not(.soldout) {
-    background-color: #6327fe;
-    color: #ffffff;
-}
-
-/* 매진된 항목 품절 처리 */
-.soldout::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "품절";
-    color: transparent;
-    background: no-repeat center/ 60px 46px url(../../src/img/Sold-out.png) rgba(0, 0, 0, 0.8);
-    border-radius: inherit;
     width: inherit;
     height: inherit;
-    pointer-events: none;
+    background-image: url("../img/Logo.png");
+    background-position: center top;
+    background-size: 436px 204px;
+    background-repeat: no-repeat;
+    background-color: #EAE8FE;
 }
 
-.items-img {
-    margin: 0 auto;
-    margin-bottom: 3px;
-    width: 36px;
-    height: 65px;
-}
-
-.items-pricetag {
-    display: block;
-    margin-top: 6px;
-    background: #6327fe;
-    color: #ffffff;
-    border-radius: 50px;
-    height: auto;
-    padding: 5px 16px 5px 15px;
-    font-size: 12px;
-}
-
-/* 자판기 기능 */
-.machine .machine-func {
-    display: grid;
-    grid-template-columns: 200fr 94fr;
-    grid-template-rows: 33fr 32fr 106fr;
-    grid-template-areas: none;
-    grid-template-areas:
-        "balance btn-change"
-        "input-payment btn-payment"
-        "selected btn-get";
-    gap: 12px;
-}
-
-.machine-func .balance {
-    grid-area: balance;
+.wrapper {
+    width: inherit;
+    height: inherit;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 10px 7px;
-    background-color: #eae8fe;
-    border-radius: 5px;
-    font-size: 14px;
-    line-height: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.machine-func .btn-change {
-    grid-area: btn-change;
+.drink_Select {
+    width: 380px;
+    height: 545px;
+    background: #FFFFFF;
+    margin: 247px 0px 171px 566px;
 }
 
-.machine-func .input-payment {
-    grid-area: input-payment;
-    box-sizing: border-box;
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
-    padding: 6px;
+.funds {
+    width: 360px;
+    height: 50px;
+    background: #FFFFFF;
+    margin: 248px 506px 4px -20px;
 }
 
-.machine-func .btn-payment {
-    grid-area: btn-payment;
+.shopping_list {
+    width: 360px;
+    height: 470px;
+    background: #FFFFFF;
+    margin: 20px 506px 171px -20px;
 }
-.machine-func .btn-change,
-.machine-func .btn-payment {
-    background-color: #ffffff;
-    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+
+.Cola_Select {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:12px;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+}
+.Cola_Select li {
+    /* padding-top: 20px; */
+    width: 94px;
+    height: 130px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.Cola_List_img{
+    margin-top: 7px;
+}
+
+.Cola_Select li:hover {
+    cursor: pointer;
+    outline: 3px solid #6327FE;
+}
+
+
+.Cola_label_cont {
+    width: 73px;
+    height: 10px;
+    display: block;
+    font-size: 5px;
+    line-height: 13px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    margin: 0 auto;
+}
+
+.Cola_label {
+    width: 73px;
+    height: 10px;
+    display: block;
+    font-size: 5px;
+    line-height: 13px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    margin-right: auto;
+}
+
+.Cola_Price {
+    display: inline-block;
+    font-size: 12px;
+    color: #FFFFFF;
+    background: #6327FE;
+    border-radius: 50px;
+    line-height: 100%;
+    padding: 5px 16px 5px 15px;
+}
+
+
+.sold_out::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 94px;
+    height: 130px;
+    background-color: #000000;
+    opacity: 0.5;
+    border-radius: 10px;
+    background-image: url("../img/품절.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.Calculator {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.Current_balance {
+    width: 200px;
+    height: 33px;
+    background: #EAE8FE;
     border-radius: 5px;
+    margin: 0px 12px 11px 37px;
+}
+
+.balance {
+    float: left;
+    display: inline-block;
+    margin: 6px 79px 4px 10px;
+}
+
+.won {
+    float: right;
+    display: inline-block;
+    margin: 6px 10px 4px 0px;
+}
+
+.Deposit {
+    font-family: 'Noto Sans';
+    width: 196px;
+    height: 31px;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    margin: 0px 12px 11px 37px;
+}
+
+.Change_btn,
+.Deposit_btn {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    width: 94px;
+    height: 33px;
     font-size: 13px;
     line-height: 19px;
-}
-
-.machine-func .btn-change:hover,
-.machine-func .btn-payment:hover {
-    background-color: #eae8fe;
-}
-
-.machine-func .btn-change:active,
-.machine-func .btn-payment:active {
-    background-color: #6327fe;
-    color: #ffffff;
-}
-
-.machine-func .selected {
-    box-sizing: border-box;
-    grid-area: selected;
-    background-color: #eae8fe;
-    border: 1px solid #bdbdbd;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: none;
     border-radius: 5px;
-    height: 106px;
-    overflow: scroll;
-    padding: 12px 18px 12px 12px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
-.machine-func .selected .selected-list {
-    border-style: none;
+.Coke_Select {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 198px;
+    height: 106px;
+    background: #EAE8FE;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    margin: 0px 12px 20px 37px;
+}
+
+.Coke_list {
     display: flex;
     flex-direction: column;
-}
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 170px;
+    margin-left: -25px;
 
-.machine-func .get-drinks {
-    cursor: pointer;
 }
-
-/* 선택, 획득리스트 공통 스타일 */
-.get-drinks {
-    display: flex;
-    justify-content: space-between;
-    height: 46px;
-    background-color: #ffffff;
+.Coke_list li,  .Coke_list_ls li{
+    width: 95%;
+    background: #FFFFFF;
     border-radius: 5px;
-    padding: 8px 8px 8px 10px;
-    align-items: center;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
     font-size: 9px;
-}
-
-.get-drinks .get-drinks-item {
+    line-height: 13px;
+    margin-bottom: 6px;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 }
-
-.get-drinks .get-drinks-item img {
+.Coke_list li img,  .Coke_list_ls li img{
+    margin: 6px 10px 7px 10px;
     width: 18px;
-    margin-right: 10px;
+
 }
 
-.count {
-    box-sizing: border-box;
+span {
+    margin: 0;
+    padding: 0;
+
+}
+
+.choice {
     width: 30px;
     height: 30px;
-    border: 1px solid #bdbdbd;
-    border-radius: 5px;
+    font-family: 'Noto Sans';
     font-size: 14px;
-    line-height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.get-drinks + .get-drinks {
-    margin-top: 6px;
-}
-
-.machine-func .btn-get {
-    grid-area: btn-get;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    line-height: 25px;
+    border: 1px solid #BDBDBD;
     border-radius: 5px;
-    background: #6327fe;
-    color: #ffffff;
-}
-
-.machine-func .btn-get:hover,
-.machine-func .btn-get:active {
-    background-color: #eb5757;
-}
-
-.pocket {
-    display: flex;
-    flex-direction: column;
-    width: 360px;
-    justify-content: space-between;
-}
-
-/* 소지금 */
-.pocket .wallet {
-    background-color: #ffffff;
-    padding: 9px 27px;
-}
-
-.pocket .wallet .wallet-box {
-    background-color: #eae8fe;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    line-height: 20px;
-    border-radius: 5px;
-    padding: 6px 10px;
-}
-
-/* 획득한 음료 */
-.pocket .earned {
-    background-color: #ffffff;
-    padding: 25px 27px 26px;
-    text-align: right;
-}
-
-.pocket .earned h4 {
+    margin: 8px 8px 8px 21px;
     text-align: center;
+}
+
+
+.Coke_get_btn {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    color: #FFFFFF;
+    width: 94px;
+    height: 108px;
+    cursor: pointer;
+    background: #6327FE;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+.fund {
+    width: 306px;
+    height: 32px;
+    background: #EAE8FE;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    margin: 9px 27px;
+}
+
+.fundage {
+    float: left;
+    display: inline-block;
+    margin: 5px 152px 4px 10px;
+}
+
+.fund_won {
+    float: right;
+    display: inline-block;
+    margin: 5px 10px 4px 0px;
+}
+
+.drink_get {
+    display: inline-block;
+    width: 68px;
+    height: 20px;
     font-weight: 700;
     font-size: 14px;
     line-height: 20px;
+    margin: 25px 146px 13px 146px;
 }
 
-.pocket .earned .selected-list {
-    box-sizing: border-box;
-    background: #eae8fe;
-    border: 1px solid #bdbdbd;
+.drink_list {
+    width: 306px;
+    height: 334px;
+    background: #EAE8FE;
+    border: 1px solid #BDBDBD;
     border-radius: 5px;
-    overflow: scroll;
-    padding: 12px 18px 12px 12px;
-    margin-top: 16px;
-    height: 364px;
+    margin: 0px 27px 6px 27px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.pocket .earned .total-price {
+.Coke_list_ls {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 276px;
+    margin-left: -25px;
+}
+
+
+.Original_Coke_ls,
+.Violet_Coke_ls,
+.Yellow_Coke_ls,
+.Cool_Coke_ls,
+.Green_Coke_ls,
+.Orange_Coke_ls {
+    width: 260px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.extended_price {
+    display: inline-block;
+    float: right;
+    width: 109px;
+    height: 20px;
+    font-weight: 500;
     font-size: 12px;
     line-height: 17px;
-    margin-top: 6px;
+    margin: 0px;
 }
 
 
-/* ----- 반응형디자인 ----- */
-/* 화면이 작아졌을 때 배치를 세로로 */
-@media screen and (max-width: 748px) {
-    body {
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 28px;
-        align-items: center;
-    }
+.Coke_list::-webkit-scrollbar {
+    width: 5px;
 }
-/* 모바일 버전 */
-@media screen and (max-width: 360px) {
-    body {
-        background-color: white;
-    }
-    .header-img {
-        height: 78px;
-        margin-bottom: 18px;
-    }
-    .container {
-        gap: 0;
-    }
-    .pocket {
-        gap: calc(55px - 34px);
-    }
+
+.Coke_list::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.Coke_list::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.Coke_list_ls::-webkit-scrollbar {
+    width: 5px;
+}
+
+.Coke_list_ls::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.Coke_list_ls::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
 }
